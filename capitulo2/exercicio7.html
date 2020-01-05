@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="notesApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exericio 7</title>
+</head>
+<body ng-controller="MainCtrl as  ctrl">
+
+  <table>
+    <tr ng-repeat-start="note in ctrl.notes">
+      <td>{{note.label}}</td>
+    </tr>
+    <tr ng-repeat-end>
+      <td>Done: {{note.done}}</td>  
+    </tr>
+  </table>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+
+  <script>
+    angular.module('notesApp', [])
+    .controller('MainCtrl', [function(){
+      var self = this
+
+      self.notes = [
+        {id: 1, label: 'Primeio Note', done: false},
+        {id: 2, label: 'Segundo Note', done: false},
+        {id:3, label: 'ultimo Note', done: true}
+      ]
+    }])
+  </script>
+
+
+  
+</body>
+</html>
