@@ -17,8 +17,8 @@
     <div>t even position {{$even}}</div>
     <div>t odd position {{$odd}}</div>
 
-    <span class="label">{{note.label}}</span>
-    <span class="status"></span>
+    <span class="label" style="color: red">{{note.label}}</span>
+    <span class="status" ng-bind="note.done"></span>
     </div>
 
  
@@ -34,9 +34,10 @@
       var self = this
 
       self.notes = [
-        {id:1 ,label: 'First Note', done: false},
-        {id: 2, label: 'Second note', done: false },
-        {id: 3, label: 'last note', done: false}
+        {id:1 ,label: 'Primeiro note', done: false},
+        {id: 2, label: 'Segundo note', done: false },
+        {id: 3, label: 'teiceiro note', done: true},
+        {id: 4, label: 'Quarto Note', done: false}
       ]
 
     }])
