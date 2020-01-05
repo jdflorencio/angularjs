@@ -37,10 +37,10 @@
    .controller('MainCtrl', [function(){
     var self = this
     self.notes = [
-      {id: 1, label: 'First Note', done: false},
+      {id: 1, label: 'First Note', done: false, assignee: "João diego"},
       {id: 2, label: 'Second note', done: false},
       {id: 3, label: 'Done note', done: true},
-      {id: 4, label: 'last note', done: false}
+      {id: 4, label: 'last note', done: false, assignee: "Enya agatha"}
     ]
 
     self.getNoteClass = function(status) {
