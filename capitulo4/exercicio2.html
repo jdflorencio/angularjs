@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="notesApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body ng-controller="MainCtrl as ctrl">
+  <input type="text" name="username" id="username" ng-model="ctrl.username" placeholder="Seu nome">
+  <input type="password" name="password" id="password" ng-model="ctrl.password" placeholder="Digite sua senha">
+  <button ng-click="ctrl.change()">Alterar Valor</button>
+  <button ng-click="ctrl.submit()">Enviar</button>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+
+  <script>
+    angular.module('notesApp', [])
+    .controller('MainCtrl', [function(){
+      var self= this
+
+      self.change = function(){
+        self.username = 'changed'
+        self.password = 'password'
+      }
+
+      self.submit = function() {
+        console.log("o Usuari clicou em enviar com", self.username, self.password)
+      }
+    }])
+  </script>
+  
+</body>
+</html>
