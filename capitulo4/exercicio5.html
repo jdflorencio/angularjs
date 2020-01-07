@@ -6,8 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
-<body ng-model="MainCtrl as ctrl">
-
+<body ng-controller="MainCtrl as ctrl">
   <form  ng-submit="ctrl.submit()" name="myForm">
     <input type="text" 
       name="username" 
@@ -24,6 +23,8 @@
 
       <input type="submit" value="Enviar" ng-disabled="myForm.$invalid">
   </form>
+
+
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
       <script>
         angular.module('notesApp', [])

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="notesApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=
+  , initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body ng-controller="MainCtrl as ctrl">
+  
+  
+
+  <form  ng-submit="ctrl.submit()" name="myForm">
+    <input type="text" 
+    name="uname" 
+    id="uname"
+    ng-model="ctrl.user.username"
+    required
+    ng-minlength='4'>
+
+    <span ng-show="myForm.uname.$error.required">Este campo é obrigatorio  </span>
+    <span ng-show="myForm.uname.$invalid">Este campo esta invalido</span>
+    <span ng-show="myForm.uname.$error.minlength">O minimo permitido é de caracteres é 4</span>
+
+    <input type="password" 
+      name="pwd" 
+      id="pwd"
+      ng-model="ctrl.user.pasword"
+      required
+      >
+    
+  <span ng-show="myForm.pwd.$error.required">
+    esse campo é requirido
+  </span>
+
+  <input 
+    type="submit" 
+    value="Enviar"
+    ng-disabled="myForm.$invalid"
+  >
+
+  </form>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+  <script>
+    angular.module('notesApp', [])
+    .controller('MainCtrl', [function() {
+
+      var self = this
+      self.submit = function(){
+        console.log('user clicked submit with ', self.user)
+      }
+
+    }])
+  </script>
+</body>
+</html>
