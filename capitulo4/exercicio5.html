@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="notesApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body ng-model="MainCtrl as ctrl">
+
+  <form  ng-submit="ctrl.submit()" name="myForm">
+    <input type="text" 
+      name="username" 
+      id="username" 
+      ng-model="ctrl.user.username"
+      required
+      ng-minlength="4">
+
+      <input type="password"
+        ng-model="ctrl.user.password"
+        name="password"
+        id="password"
+        required>
+
+      <input type="submit" value="Enviar" ng-disabled="myForm.$invalid">
+  </form>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+      <script>
+        angular.module('notesApp', [])
+        .controller('MainCtrl', [function(){
+
+          var self = this
+
+          self.submit = function() {
+            console.log('usuario envio o  fomulario validado ', self.user)
+          }
+        }])
+      </script>
+
+
+  </form>
+
+
+  
+
+  
+</body>
+</html>
